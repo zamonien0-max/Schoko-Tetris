@@ -8,5 +8,12 @@
   "display": "fullscreen",
   "orientation": "portrait",
   "background_color": "#E5183C",
-  "theme_color": "#E5183C"
+  "theme_color": "#E5183C",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
