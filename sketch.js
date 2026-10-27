@@ -704,10 +704,8 @@ function keyPressed(event) {
   
 }
 
+
 function windowResized() {
-  // Das interne Spielfeld bleibt 540 × 960 Pixel groß.
-  // Die Darstellung wird über CSS an den Bildschirm angepasst.
-  resizeCanvas(W, H);
   fitCanvasToScreen();
 }
 
@@ -715,18 +713,29 @@ function fitCanvasToScreen() {
   const canvas = document.querySelector("canvas");
   if (!canvas) return;
 
+  const availableWidth = window.innerWidth;
+  const availableHeight = window.innerHeight;
+
   const scale = Math.min(
-    (window.innerWidth * 0.96) / W,
-    (window.innerHeight * 0.96) / H
+    availableWidth / W,
+    availableHeight / H
   );
 
   canvas.style.width = `${W * scale}px`;
   canvas.style.height = `${H * scale}px`;
   canvas.style.display = "block";
   canvas.style.margin = "0 auto";
-  
-document.body.style.margin = "0";
-document.body.style.padding = "0";
-document.body.style.background = "#111";
-document.body.style.overflow = "hidden";
+
+  document.body.style.margin = "0";
+  document.body.style.padding = "0";
+  document.body.style.background = "#111";
+  document.body.style.overflow = "hidden";
+
+  document.body.style.width = "100%";
+  document.body.style.height = "100dvh";
+
+  canvas.style.position = "absolute";
+  canvas.style.left = "50%";
+  canvas.style.top = "50%";
+  canvas.style.transform = "translate(-50%, -50%)";
 }
