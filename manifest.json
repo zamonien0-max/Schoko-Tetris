@@ -1,0 +1,12 @@
+
+{
+  "name": "Schoko Tetris",
+  "short_name": "Schoko Tetris",
+  "description": "Ein Schokoladen-Tetris-Spiel",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "background_color": "#E5183C",
+  "theme_color": "#E5183C"
+}
