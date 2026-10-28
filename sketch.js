@@ -643,13 +643,11 @@ function setupTouchControls() {
     const buttonY = 895;
 
     if (
-      Math.abs(endX - touchStartX) < 20 &&
-      Math.abs(endY - touchStartY) < 20 &&
-      endY >= buttonY &&
-      endY <= buttonY + buttonHeight &&
-      endX >= startX &&
-      endX <= startX + totalWidth
-    ) {
+  endY >= buttonY &&
+  endY <= buttonY + buttonHeight &&
+  endX >= startX &&
+  endX <= startX + totalWidth
+) {
       const relativeX = endX - startX;
       const buttonIndex = Math.floor(relativeX / (buttonWidth + gap));
 
