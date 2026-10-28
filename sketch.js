@@ -187,7 +187,7 @@ function draw() {
     drawOverlay(
       "SCHOKO TETRIS",
       "Ordne deine Schokowürfel!",
-      "ENTER ZUM STARTEN"
+      "TIPPE ZUM STARTEN"
     );
   }
 
@@ -195,7 +195,7 @@ function draw() {
     drawOverlay(
       "GAME OVER",
       "Punkte: " + score,
-      "ENTER ZUM NOCHMAL SPIELEN"
+      "TIPPE ZUM NOCHMAL SPIELEN"
     );
   }
 }
