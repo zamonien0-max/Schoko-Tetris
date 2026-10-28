@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "schoko-tetris-v1";
+const CACHE_NAME = "schoko-tetris-v2";
 
 const ASSETS = [
   "./",
