@@ -634,6 +634,36 @@ function setupTouchControls() {
     const endX = (event.clientX - rect.left) * W / rect.width;
     const endY = (event.clientY - rect.top) * H / rect.height;
 
+    // Farbbuttons antippen
+    const buttonWidth = 42;
+    const buttonHeight = 28;
+    const gap = 10;
+    const totalWidth = 5 * buttonWidth + 4 * gap;
+    const startX = (W - totalWidth) / 2;
+    const buttonY = 895;
+
+    if (
+      Math.abs(endX - touchStartX) < 20 &&
+      Math.abs(endY - touchStartY) < 20 &&
+      endY >= buttonY &&
+      endY <= buttonY + buttonHeight &&
+      endX >= startX &&
+      endX <= startX + totalWidth
+    ) {
+      const relativeX = endX - startX;
+      const buttonIndex = Math.floor(relativeX / (buttonWidth + gap));
+
+      if (
+        buttonIndex >= 0 &&
+        buttonIndex < 5 &&
+        relativeX % (buttonWidth + gap) <= buttonWidth
+      ) {
+        themeIndex = buttonIndex;
+      }
+
+      return;
+    }
+
     if (gameState !== "playing" || clearRowsPending.length > 0) return;
 
     const dx = endX - touchStartX;
