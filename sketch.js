@@ -662,13 +662,8 @@ function setupTouchControls() {
       return;
     }
 
-  if (gameState === "gameover") {
-  startGame();
-  return;
-}
-
 if (gameState === "over" || gameState === "menu") {
-  startGame();
+  resetGame();
   return;
 }
 
