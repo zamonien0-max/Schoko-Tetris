@@ -34,7 +34,7 @@ let lastTime = 0;
 // Die anderen drei sind vorläufige Platzhalter.
 const themes = [
   { name: "MARZIPAN", color: "#E5183C" },
-  { name: "GRÜN", color: "#6bb53d" },
+  { name: "NUSS", color: "#6bb53d" },
   { name: "KNUSPERFLAKES", color: "#efbe08" },
   { name: "ALPENMILCH", color: "#376DAD" },
   { name: "ERDBEERE", color: "#E99AB2" }
@@ -410,7 +410,7 @@ function drawOverlay(title, subtitle, instruction) {
   text(instruction, W / 2, H / 2 + 35);
 
   textSize(12);
-  text("Hintergrund mit 1–5 wählen", W / 2, H / 2 + 68);
+ // text("Hintergrund mit 1–5 wählen", W / 2, H / 2 + 68);
 }
 
 function collides(piece, dx, dy, cells) {
@@ -662,7 +662,12 @@ function setupTouchControls() {
       return;
     }
 
-    if (gameState !== "playing" || clearRowsPending.length > 0) return;
+  if (gameState === "gameover") {
+  startGame();
+  return;
+}
+
+if (gameState !== "playing" || clearRowsPending.length > 0) return;
 
     const dx = endX - touchStartX;
     const dy = endY - touchStartY;
