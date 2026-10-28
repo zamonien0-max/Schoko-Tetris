@@ -36,7 +36,7 @@ const themes = [
   { name: "MARZIPAN", color: "#E5183C" },
   { name: "NUSS", color: "#6bb53d" },
   { name: "KNUSPERFLAKES", color: "#efbe08" },
-  { name: "ALPENMILCH", color: "#376DAD" },
+  { name: "ALPENMILCH", color: "#19b1e7" },
   { name: "ERDBEERE", color: "#E99AB2" }
 ];
 
