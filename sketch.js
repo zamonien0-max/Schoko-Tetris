@@ -348,6 +348,7 @@ function drawNextPiece() {
   }
 }
 
+
 function drawFooter() {
   fill(255, 235);
   textAlign(CENTER, CENTER);
@@ -357,8 +358,37 @@ function drawFooter() {
   text("LEERTASTE: SOFORT FALLEN", W / 2, 852);
 
   textSize(11);
-  text("1–5: HINTERGRUND WECHSELN", W / 2, 882);
-  text("R: NEUSTART", W / 2, 902);
+  text("HINTERGRUND ÄNDERN", W / 2, 880);
+
+  const buttonWidth = 42;
+  const buttonHeight = 28;
+  const gap = 10;
+  const totalWidth = 5 * buttonWidth + 4 * gap;
+  const startX = (W - totalWidth) / 2;
+  const buttonY = 895;
+
+  for (let i = 0; i < 5; i++) {
+    fill(themes[i].color);
+    stroke(255);
+    strokeWeight(themeIndex === i ? 3 : 1);
+
+    rect(
+      startX + i * (buttonWidth + gap),
+      buttonY,
+      buttonWidth,
+      buttonHeight,
+      5
+    );
+
+    noStroke();
+    fill(255);
+    textSize(14);
+    text(
+      String(i + 1),
+      startX + i * (buttonWidth + gap) + buttonWidth / 2,
+      buttonY + buttonHeight / 2
+    );
+  }
 }
 
 function drawOverlay(title, subtitle, instruction) {
