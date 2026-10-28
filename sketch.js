@@ -667,6 +667,11 @@ function setupTouchControls() {
   return;
 }
 
+if (gameState === "over" || gameState === "menu") {
+  startGame();
+  return;
+}
+
 if (gameState !== "playing" || clearRowsPending.length > 0) return;
 
     const dx = endX - touchStartX;
